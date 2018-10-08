@@ -50,7 +50,7 @@ def adjustData(args):
     image_list = os.listdir(data_dir)
     for image in image_list:
         label_name, label = labelFromImageName(image)
-        logging.debug("image name is %s, label name is %s" % (label_name, label))
+        #logging.debug("image name is %s, label name is %s" % (label_name, label))
         imageNum_dict[label] = imageNum_dict.get(label, 0) + 1
     needI = {} # 每个分类还需要多少图片
     for key in imageNum_dict.keys():
@@ -62,7 +62,8 @@ def adjustData(args):
             needI[key] = classPerNum//imageNum_dict.get(key, 1) + 1
     needI = sorted(needI.items(), key=lambda x: x[0])
     needI = dict(needI)
-    needI[0] = needI.get(0,1) + 1
+    #needI[0] = needI.get(0,1) + 1
+    needI[0] = needI.get(0,1)
     logging.debug("image of every classification need: %s" % (needI))
 
     newImageNameI = {}
@@ -71,7 +72,8 @@ def adjustData(args):
     count = 0
     for key in imageNum_dict.keys():
         classPerNum_dict[key] = classPerNum_dict.get(key, classPerNum)
-    classPerNum_dict[0] = 2 * classPerNum_dict.get(key, classPerNum) # 正常分类的两倍classPerNum数量
+    #classPerNum_dict[0] = 2 * classPerNum_dict.get(key, classPerNum) # 正常分类的两倍classPerNum数量
+    classPerNum_dict[0] = imageNum_dict[0]
     for image in image_list:
         if (image.split(os.path.sep)[-1].split(".")[1]) != "jpg": 
             continue

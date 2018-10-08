@@ -14,10 +14,10 @@ import cv2
 import os
 import logging
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,3"
 logging.basicConfig(level=logging.DEBUG)
 
-norm_size = 128
+norm_size = 256
 
 def args_parse():
 # construct the argument parse and parse the arguments
@@ -64,8 +64,8 @@ def predict(args):
             final_label = "defect" + label
         csv_data = [image_name, final_label]
         csv_writer.writerow(csv_data)
-
-"""
+    logging.debug("Done")
+    '''
         # label = str(np.where(result==proba)[0])
         # label = "{}: {:.2f}%".format(label, proba * 100)
         # print(label)
@@ -77,8 +77,7 @@ def predict(args):
                 0.7, (0, 255, 0), 2)       
             # show the output image
             cv2.imshow("Output", output)
-            cv2.waitKey(0)
-"""
+            cv2.waitKey(0)'''
 
 # python predict.py --model tianchi.model -dtest /home/ljs/tianchi2018/dataset/guangdong_round1_test_a_20180916
 if __name__ == '__main__':
