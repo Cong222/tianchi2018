@@ -29,7 +29,7 @@ from net.lenet import LeNet
 from net.resnet101 import ResNet101
 from net.googlenet import GoogleNet
 
-os.environ['CUDA_VISIBLE_DEVICES']='2,3'
+os.environ['CUDA_VISIBLE_DEVICES']='5'
 early_stopping = EarlyStopping(monitor='val_loss', patience=6, verbose=2, mode='auto')
 
 logging.basicConfig(level=logging.DEBUG)
