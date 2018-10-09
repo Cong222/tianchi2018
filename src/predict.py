@@ -14,7 +14,7 @@ import cv2
 import os
 import logging
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 logging.basicConfig(level=logging.DEBUG)
 
 norm_size = 256

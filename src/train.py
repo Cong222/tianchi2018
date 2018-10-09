@@ -4,7 +4,6 @@ Date: 2018-9-30
 
 Modified by Cong in 2018-10-08
 """
-
 # set the matplotlib backend so figures can be saved in the background
 import matplotlib
 matplotlib.use("Agg")
@@ -54,8 +53,8 @@ def args_parse():
 
 # initialize the number of epochs to train for, initial learning rate,
 # and batch size
-EPOCHS = 150
-INIT_LR = 6e-5
+EPOCHS = 300
+INIT_LR = 4e-5
 #INIT_LR = 5e-3
 BS = 16
 CLASS_NUM = 12

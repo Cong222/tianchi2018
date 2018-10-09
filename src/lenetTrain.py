@@ -29,7 +29,7 @@ from net.lenet import LeNet
 from net.resnet101 import ResNet101
 from net.googlenet import GoogleNet
 
-os.environ['CUDA_VISIBLE_DEVICES']='5'
+os.environ['CUDA_VISIBLE_DEVICES']='6'
 early_stopping = EarlyStopping(monitor='val_loss', patience=15, verbose=2, mode='auto')
 
 logging.basicConfig(level=logging.DEBUG)
@@ -55,7 +55,7 @@ def args_parse():
 # initialize the number of epochs to train for, initial learning rate,
 # and batch size
 EPOCHS = 300
-INIT_LR = 8e-4
+INIT_LR = 4e-4
 #INIT_LR = 5e-3
 BS = 64
 CLASS_NUM = 12

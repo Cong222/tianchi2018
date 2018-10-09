@@ -1,3 +1,4 @@
+# coding=utf-8
 """
 Author: Lijunshi
 Date: 2018-9-30

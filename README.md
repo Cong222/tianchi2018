@@ -20,7 +20,7 @@ python train.py --dataset_train /home/ljs/tianchi2018/data_all1 --model lenet_10
 norm_size = 128
 ```
 ```
-python predict.py --model lenet_100.model -dtest /home/ljs/tianchi2018/dataset/guangdong_round1_test_a_20180916
+python predict.py --model lenet_100.model --dtest /home/ljs/tianchi2018/dataset/guangdong_round1_test_a_20180916
 
 ```
 ## create new data -- adjust_data.py
